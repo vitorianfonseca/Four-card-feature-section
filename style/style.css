@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --text: #4D4F62;
+    --bg-color:#FAFAFA;
+    --bg-color-card:#FFF;
+    --supervisor-color:#44D3D2;
+    --team-builder-color:#EA5454;
+    --karma-color:#FCAE4A;
+    --calculator-color:#549EF2;
+    --main-font:"Poppins", sans-serif;
+}
+
+* {
+    max-width: 1110px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+body {
+    background: var(--bg-color);
+}
+
+/* HEADER SECTION */
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.header h1 {
+    color: var(--text);
+    font-family: var(--main-font);
+    font-size: 2.25rem;
+    font-weight: 300;
+    letter-spacing: 0.01563rem;
+}
+
+.header h2 {
+    color: var(--text);
+    font-family: var(--main-font);
+    text-align: center;
+    font-size: 2.25rem;
+    font-weight: 600;
+    letter-spacing: 0.01563rem;
+}
+
+.header p {
+    max-width: 33rem;
+    margin-top: 0.8rem;
+    /* text style */
+    color: var(--text);
+    font-family: var(--main-font);
+    text-align: center;
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.5625rem; 
+    letter-spacing: 0.0065rem;
+    opacity: 0.5;
+}
+
+/* CARD SECTION */
+
+main {
+    display: grid;
+    place-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-column-gap: 1.87rem;
+    grid-row-gap: 1.87rem;
+    margin: 4rem 0rem 5rem;
+}
+
+.card_supervisor { grid-area: 2 / 1 / 4 / 3; }
+.card_teambuilder{ grid-area: 1 / 3 / 3 / 5; }
+.card_karma      { grid-area: 3 / 3 / 5 / 5; }
+.card_calculator { grid-area: 2 / 5 / 4 / 7; }
+
+.card {
+    max-width: 22rem;
+    height: 16rem;
+    border-radius: 0.5rem;
+    background: var(--bg-color-card);
+    box-shadow: 0px 15px 30px -11px rgba(131, 166, 210, 0.50);
+}
+
+.card_supervisor {
+    border-top: 0.25rem solid var(--supervisor-color);
+}
+
+.card_teambuilder {
+    border-top: 0.25rem solid var(--team-builder-color);
+}
+
+.card_karma {
+    border-top: 0.25rem solid var(--karma-color);
+}
+
+.card_calculator {
+    border-top: 0.25rem solid var(--calculator-color);
+}
+
+.card_title {
+    color: var(--text);
+    font-family: var(--main-font);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.75rem 0rem 0rem 2rem;
+}
+
+.card_text {
+    opacity: 0.5;
+    margin: 0.4rem 0rem 0rem 2rem;
+    width: 80%;
+    /* text style */
+    color: var(--text);
+    font-family: var(--main-font);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.4375rem;
+    letter-spacing: 0.00563rem;
+}
+
+.card_image {
+    padding: 2.5rem 2rem 2rem;
+    display: grid;
+    justify-content: right;
+}
+
+/* TAVLET VIEW */
+
+@media only screen and (max-width: 1200px) and (min-width: 840px)  {
+
+    * {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 2fr);
+        grid-column-gap: 1.5rem;
+        grid-row-gap: 1.5rem;
+    }
+        
+        .card_supervisor { grid-area: 1 / 1 / 2 / 2; }
+        .card_teambuilder{ grid-area: 1 / 2 / 2 / 3; }
+        .card_karma      { grid-area: 2 / 1 / 3 / 2; }
+        .card_calculator { grid-area: 2 / 2 / 3 / 3; }
+
+}
+
+/* MOBILE VIEW */
+
+@media only screen and (max-width: 840px) {
+
+    * {
+        max-width: 20rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+        letter-spacing: 0.01044rem;
+    }
+
+    .header h2 {
+        font-size: 1.5rem;
+        letter-spacing: 0.01044rem;
+    }
+
+    .header p {
+        max-width: 19.4375rem;
+        font-size: 0.9375rem;
+        letter-spacing: 0.0065rem;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        grid-row-gap: 1.56rem;
+    }
+        
+        .card_supervisor { grid-area: 1 / 1 / 2 / 2; }
+        .card_teambuilder{ grid-area: 2 / 1 / 3 / 2; }
+        .card_karma      { grid-area: 3 / 1 / 4 / 2; }
+        .card_calculator { grid-area: 4 / 1 / 5 / 2; }
+
+    .card {
+        max-width: 19.4375rem;
+        height: 13.875rem;
+    }
+
+    .card_title {
+        margin: 1.5rem 0rem 0rem 1.75rem;
+    }
+    
+    .card_text {
+        margin: 0rem 0rem 0rem 1.8rem;
+    }
+    
+    .card_image {
+        padding: 2rem 1.75rem 1.75rem;
+    }
+}
